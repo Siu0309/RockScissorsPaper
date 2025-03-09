@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 온라인</title>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>가위바위보 온라인</h1>
+
+    <!-- 닉네임 입력 필드 -->
+    <div id="nickname-container">
+        <input type="text" id="nickname" placeholder="닉네임 입력">
+        <button onclick="setNickname()">입장</button>
+    </div>
+
+    <!-- 게임 화면 (닉네임 설정 후 표시) -->
+    <div id="game-container" style="display:none;">
+        <p id="status">상대를 기다리는 중...</p>
+        <button id="rock">✊</button>
+        <button id="scissors">✌️</button>
+        <button id="paper">🖐️</button>
+        <p id="result"></p>
+    </div>
+
+    <style>
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+        
+    <!-- 재대결 버튼 -->
+    <div id="rematch-container" style="display:none;">
+        <button onclick="requestRematch()">재대결 요청</button>
+    </div>
+    
+</body>
+</html>
