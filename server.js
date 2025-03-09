@@ -89,6 +89,10 @@ io.on("connection", (socket) => {
 
 function setupGame(player1, player2) {
   const choices = {};
+
+  player1.removeAllListeners("choice");
+  player2.removeAllListeners("choice");
+
   player1.on("choice", (choice) => {
     if (inRematchVote[player1.id]) return; // 재대결 투표 중이면 선택 불가
     console.log(`${players[player1.id]} 선택: ${choice}`);
