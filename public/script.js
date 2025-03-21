@@ -1,4 +1,4 @@
-const socket = io("https://rockscissorspaper-4son.onrender.com");
+const socket = io("rsponline.netlify.app");
 
 function setNickname() {
     const nickname = document.getElementById("nickname").value.trim();
