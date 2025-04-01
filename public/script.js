@@ -1,4 +1,4 @@
-const socket = io("https://rps-server-production.up.railway.app");
+const socket = io("http://localhost:3000");
 
 function setNickname() {
     const nickname = document.getElementById("nickname").value.trim();
